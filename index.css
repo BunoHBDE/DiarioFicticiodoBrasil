@@ -1,0 +1,96 @@
+/* Reset básico e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos de fontes responsivos baseados nos multiplicadores */
+.category-text {
+  font-size: calc(0.75rem * var(--font-size-multiplier, 1));
+  font-weight: var(--font-weight-base, 400);
+  letter-spacing: var(--letter-spacing-base, 0);
+}
+
+.page-title {
+  font-size: calc(2.5rem * var(--font-size-multiplier, 1));
+  font-weight: var(--font-weight-base, 700);
+  letter-spacing: var(--letter-spacing-base, 0);
+}
+
+@media (max-width: 640px) {
+  .page-title {
+    font-size: calc(1.875rem * var(--font-size-multiplier, 1));
+  }
+}
+
+.header-subtitle {
+  font-size: calc(1rem * var(--font-size-multiplier, 1));
+  font-weight: var(--font-weight-base, 400);
+  letter-spacing: var(--letter-spacing-base, 0);
+}
+
+.date-text {
+  font-size: calc(0.75rem * var(--font-size-multiplier, 1));
+  font-weight: var(--font-weight-base, 400);
+  letter-spacing: var(--letter-spacing-base, 0);
+}
+
+.headline-main {
+  font-size: calc(2.25rem * var(--font-size-multiplier, 1));
+  font-weight: var(--font-weight-base, 700);
+  letter-spacing: var(--letter-spacing-base, 0);
+}
+
+@media (max-width: 640px) {
+  .headline-main {
+    font-size: calc(1.5rem * var(--font-size-multiplier, 1));
+  }
+}
+
+.headline-secondary {
+  font-size: calc(1.25rem * var(--font-size-multiplier, 1));
+  font-weight: var(--font-weight-base, 700);
+  letter-spacing: var(--letter-spacing-base, 0);
+}
+
+.article-summary-main {
+  font-size: calc(1.125rem * var(--font-size-multiplier, 1));
+  font-weight: var(--font-weight-base, 400);
+  letter-spacing: var(--letter-spacing-base, 0);
+}
+
+.article-summary-secondary {
+  font-size: calc(0.875rem * var(--font-size-multiplier, 1));
+  font-weight: var(--font-weight-base, 400);
+  letter-spacing: var(--letter-spacing-base, 0);
+}
+
+/* Estilos de alto contraste */
+.high-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast .text-ink,
+.high-contrast .text-gray-700,
+.high-contrast .text-gray-600,
+.high-contrast .text-gray-800 {
+  color: #ffffff !important;
+}
+
+.high-contrast .bg-paper {
+  background-color: #000000 !important;
+}
+
+.high-contrast .bg-gray-50,
+.high-contrast .bg-index.css
