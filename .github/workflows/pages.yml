@@ -28,13 +28,9 @@ jobs:
           cache: npm
 
       # Se houver package-lock.json, usa npm ci; caso contrário, npm install
-      - name: Install deps (npm ci if lockfile)
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+      - name: Install dependencies
+        run: npm install
+
 
       - name: Build
         run: npm run build
