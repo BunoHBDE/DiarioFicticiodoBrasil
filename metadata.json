@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Diário Fictício do Brasil",
+  "description": "Uma página de jornal brasileiro gerada dinamicamente com notícias fictícias criadas pela API Gemini. Cada atualização traz as 'últimas' notícias do dia.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

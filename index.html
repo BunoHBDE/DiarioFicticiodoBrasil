@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diário Fictício do Brasil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'serif': ['Playfair Display', 'serif'],
+              'sans': ['Roboto', 'sans-serif'],
+            },
+            colors: {
+              'paper': '#fdfdf8',
+              'ink': '#2a2a2a',
+              'accent': '#a12a24',
+            },
+            animation: {
+              'marquee': 'marquee 25s linear infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        --font-size-multiplier: 1;
+        --font-weight-base: 400;
+        --letter-spacing-base: 0em;
+      }
+
+      /* Apply base accessibility settings to all text elements, including headings */
+      body, p, span, a, li, button, h1, h2, h3 {
+        font-weight: var(--font-weight-base);
+        letter-spacing: var(--letter-spacing-base);
+      }
+
+      /* Set base font size for body and common elements */
+      body, p, span, a, li, button {
+        font-size: calc(1rem * var(--font-size-multiplier));
+      }
+      
+      /* Use classes for specific typographic roles to avoid conflicts with resets */
+      .page-title { font-size: calc(2.5rem * var(--font-size-multiplier)); }
+      .headline-main { font-size: calc(2rem * var(--font-size-multiplier)); }
+      .headline-secondary { font-size: calc(1.25rem * var(--font-size-multiplier)); }
+      
+      /* Classes for other text elements */
+      .article-summary-main { font-size: calc(1.1rem * var(--font-size-multiplier)); }
+      .article-summary-secondary { font-size: calc(0.95rem * var(--font-size-multiplier)); }
+      .category-text { font-size: calc(0.8rem * var(--font-size-multiplier)); }
+      .header-subtitle { font-size: calc(0.9rem * var(--font-size-multiplier)); }
+      .date-text { font-size: calc(0.8rem * var(--font-size-multiplier)); }
+
+      /* Helper classes that should always apply */
+      .font-serif { font-family: 'Playfair Display', serif; }
+      .font-sans { font-family: 'Roboto', 'sans-serif'; }
+      /* When 'Engrossar Letra' is off, this allows specific elements to remain bold */
+      .font-bold {
+        font-weight: 700;
+      }
+      
+      /* New style for Read Aloud feature */
+      .readable-content:focus {
+        outline: 3px solid #FFC700; /* Amarelo destacado */
+        outline-offset: 4px;
+        background-color: rgba(255, 199, 0, 0.1);
+        border-radius: 4px;
+        scroll-margin-top: 20px; /* Adds space when scrolling into view */
+      }
+
+      /* High Contrast Mode Styles */
+      .high-contrast {
+        background-color: #2a2a2a !important; /* ink */
+        color: #fdfdf8 !important; /* paper */
+      }
+      .high-contrast .bg-paper, 
+      .high-contrast .bg-gray-200 /* page background */ {
+        background-color: #2a2a2a !important;
+      }
+      .high-contrast .text-ink,
+      .high-contrast .text-gray-900,
+      .high-contrast .text-gray-800,
+      .high-contrast .text-gray-700 {
+        color: #fdfdf8 !important; /* paper */
+      }
+      .high-contrast .text-gray-600,
+      .high-contrast .text-gray-500 {
+        color: #d1d5db !important; /* a lighter gray */
+      }
+      .high-contrast .text-accent {
+        color: #fef08a !important; /* light yellow for contrast */
+      }
+       .high-contrast .bg-accent {
+        background-color: #fef08a !important;
+       }
+       .high-contrast .bg-accent .text-white,
+       .high-contrast .bg-accent p {
+         color: #2a2a2a !important;
+       }
+      .high-contrast .border-ink,
+      .high-contrast .border-gray-300,
+      .high-contrast .border-t-2,
+      .high-contrast .border-b-4 {
+        border-color: #9ca3af !important; /* medium gray */
+      }
+      .high-contrast img {
+        filter: grayscale(50%);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.26.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
