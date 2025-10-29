@@ -2,8 +2,8 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]   # publica a cada push na main
-  workflow_dispatch:      # permite rodar manualmente
+    branches: ["main"]     # publica a cada push na main
+  workflow_dispatch:        # permite rodar manualmente
 
 permissions:
   contents: read
@@ -25,17 +25,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          # ❗️NÃO usar "cache: npm" para não exigir lockfile
 
-      # Se houver package-lock.json, usa npm ci; caso contrário, npm install
       - name: Install dependencies
         run: npm install
-
 
       - name: Build
         run: npm run build
 
-      # SPA fallback para rotas do Vite em Pages
+      # SPA fallback (evita 404 ao recarregar rotas)
       - name: Create 404 fallback
         run: cp dist/index.html dist/404.html
 
